@@ -1,0 +1,52 @@
+.section {
+  background: var(--ink);
+}
+
+.inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: clamp(64px, 8vw, 104px) 24px;
+}
+
+.h2 {
+  margin: 0;
+  font-family: var(--font-newsreader);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+  color: #f7f5f0;
+  max-width: 22ch;
+}
+
+.em {
+  font-style: italic;
+  color: var(--ochre-light);
+}
+
+.grid {
+  margin: 40px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.col {
+  border-top: 2px solid var(--ochre-light);
+  padding-top: 22px;
+}
+
+.colTitle {
+  margin: 0;
+  font-family: var(--font-newsreader);
+  font-weight: 500;
+  font-size: 21px;
+  color: #f7f5f0;
+}
+
+.colDesc {
+  margin: 14px 0 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #b9b2a5;
+}

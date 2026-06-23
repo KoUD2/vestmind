@@ -1,0 +1,123 @@
+:root {
+  --bg: #f7f5f0;
+  --paper: #fffdf9;
+  --ink: #1a1a1a;
+  --ink-soft: #444;
+  --line: #e3ded4;
+  --ochre: #a8763e;
+  --ochre-deep: #7a5a2e;
+  --ochre-light: #d8a866;
+  --muted: #6b6b6b;
+  --font-newsreader: 'Newsreader', serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --ease: cubic-bezier(.22,1,.36,1);
+  --max-w: 1180px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@keyframes riseUp {
+  from { opacity: 0; transform: translateY(22px); filter: blur(8px); }
+  to   { opacity: 1; transform: none; filter: blur(0); }
+}
+
+@keyframes drawLine {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+[data-arrow] {
+  display: inline-block;
+  transition: transform .45s cubic-bezier(.22,1,.36,1);
+}
+
+details summary span.rotateIcon {
+  transition: transform .35s cubic-bezier(.22,1,.36,1);
+  display: inline-block;
+}
+
+details[open] summary span.rotateIcon {
+  transform: rotate(45deg);
+}
+
+[data-ulink] {
+  position: relative;
+}
+
+[data-ulink]::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  background: var(--ochre);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s cubic-bezier(.22,1,.36,1);
+}
+
+[data-ulink]:hover::after {
+  transform: scaleX(1);
+}
+
+[data-btn] {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+[data-btn]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ochre-deep);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s cubic-bezier(.22,1,.36,1);
+  z-index: -1;
+}
+
+[data-btn]:hover::before {
+  transform: scaleX(1);
+}
+
+[data-arrowlink]:hover [data-arrow] {
+  transform: translateX(6px);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--ochre);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (max-width: 840px) {
+  [data-navlinks] {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  [data-reveal] { opacity: 1 !important; translate: 0 0 !important; }
+  [data-pipeline] { stroke-dashoffset: 0 !important; }
+}

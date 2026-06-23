@@ -1,0 +1,51 @@
+.section {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 34px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 48px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.builtOn {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9a9485;
+}
+
+.partners {
+  display: flex;
+  gap: 18px;
+  font-family: var(--font-newsreader);
+  font-size: 20px;
+  color: var(--ink);
+}
+
+.dot {
+  color: #cdc6b8;
+}
+
+.tagline {
+  margin: 0;
+  flex: 1;
+  min-width: 280px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #555;
+  max-width: 60ch;
+}

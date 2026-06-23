@@ -1,0 +1,53 @@
+.footer {
+  background: var(--ink);
+  border-top: 1px solid #2a2a2a;
+}
+
+.inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 48px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-newsreader);
+  font-size: 22px;
+  font-weight: 500;
+  color: #f7f5f0;
+  letter-spacing: -0.4px;
+}
+
+.logoAccent {
+  color: var(--ochre-light);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+}
+
+.link {
+  font-size: 14px;
+  color: #b9b2a5;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #f7f5f0;
+}
+
+.copy {
+  margin: 0;
+  font-size: 13px;
+  color: #6b6468;
+}

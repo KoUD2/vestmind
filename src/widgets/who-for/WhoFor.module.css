@@ -1,0 +1,154 @@
+.section {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: clamp(72px, 9vw, 118px) 24px;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ochre);
+}
+
+.h2 {
+  margin: 18px 0 0;
+  font-family: var(--font-newsreader);
+  font-weight: 400;
+  font-size: clamp(30px, 4.6vw, 50px);
+  line-height: 1.08;
+  letter-spacing: -1px;
+  max-width: 18ch;
+}
+
+.grid {
+  margin: 44px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.fitCard {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(.22,1,.36,1), border-color 0.4s, box-shadow 0.4s;
+}
+
+.fitCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--ochre);
+  box-shadow: 0 18px 40px rgba(168, 118, 62, 0.13);
+}
+
+.notFitCard {
+  background: #f4f1ea;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(.22,1,.36,1), box-shadow 0.4s;
+}
+
+.notFitCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(26, 26, 26, 0.07);
+}
+
+.fitBar {
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--ochre);
+}
+
+.notFitBar {
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  background: #cfc8bb;
+}
+
+.fitTitle {
+  margin: 16px 0 0;
+  font-family: var(--font-newsreader);
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--ink);
+}
+
+.notFitTitle {
+  margin: 16px 0 0;
+  font-family: var(--font-newsreader);
+  font-weight: 500;
+  font-size: 22px;
+  color: #8a8478;
+}
+
+.list {
+  margin: 22px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fitItem {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.notFitText {
+  color: var(--muted);
+}
+
+.check {
+  flex: none;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: rgba(168, 118, 62, 0.14);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.checkMark {
+  width: 5px;
+  height: 9px;
+  border: solid var(--ochre);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-top: -2px;
+}
+
+.dash {
+  flex: none;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #e7e1d6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.dashMark {
+  width: 9px;
+  height: 2px;
+  background: #a8a294;
+}
