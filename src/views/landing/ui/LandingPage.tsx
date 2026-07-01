@@ -1,5 +1,6 @@
 'use client';
 import useScrollProgress from '@/shared/lib/useScrollProgress';
+import { BookAuditProvider, BookAuditModal } from '@/features/book-audit';
 import Header from '@/widgets/header';
 import Hero from '@/widgets/hero';
 import TrustStrip from '@/widgets/trust-strip';
@@ -19,6 +20,7 @@ export default function LandingPage() {
   const progressRef = useScrollProgress();
 
   return (
+    <BookAuditProvider>
     <div style={{ position: 'relative', overflowX: 'hidden' }}>
       <div
         ref={progressRef}
@@ -50,6 +52,8 @@ export default function LandingPage() {
         <FinalCta />
       </main>
       <Footer />
+      <BookAuditModal />
     </div>
+    </BookAuditProvider>
   );
 }

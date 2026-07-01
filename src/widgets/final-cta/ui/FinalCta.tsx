@@ -4,10 +4,12 @@ import usePrefersReducedMotion from '@/shared/lib/usePrefersReducedMotion';
 import useReveal from '@/shared/lib/useReveal';
 import useMagnetic from '@/shared/lib/useMagnetic';
 import useWordReveal from '@/shared/lib/useWordReveal';
+import { useBookAudit } from '@/features/book-audit';
 import styles from '../FinalCta.module.css';
 
 export default function FinalCta() {
   const reduce = usePrefersReducedMotion();
+  const { open } = useBookAudit();
   const sectionRef = useReveal(reduce);
   const magneticRef = useMagnetic<HTMLAnchorElement>();
   const h2Ref = useWordReveal<HTMLHeadingElement>(null, reduce);
@@ -36,6 +38,7 @@ export default function FinalCta() {
             href="mailto:hello@vestmind.studio"
             data-btn
             className={styles.btn}
+            onClick={(e) => { e.preventDefault(); open(e.currentTarget); }}
           >
             Book a paid audit
           </a>

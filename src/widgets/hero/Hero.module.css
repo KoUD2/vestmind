@@ -47,8 +47,20 @@
   background: var(--ochre-deep);
   border-radius: 2px;
   transform-origin: left;
-  transform: scaleX(1);
-  animation: drawLine 1s cubic-bezier(.22,1,.36,1) 1s both;
+  transform: scaleX(0);
+  animation: heroDraw 0.9s cubic-bezier(.22, 1, .36, 1) 1.15s forwards;
+}
+
+@keyframes heroDraw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroEm::after {
+    transform: scaleX(1);
+    animation: none;
+  }
 }
 
 .subhead {

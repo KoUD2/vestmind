@@ -3,12 +3,14 @@ import CanvasFx from '@/shared/ui/CanvasFx';
 import useMagnetic from '@/shared/lib/useMagnetic';
 import usePrefersReducedMotion from '@/shared/lib/usePrefersReducedMotion';
 import useWordReveal from '@/shared/lib/useWordReveal';
+import { useBookAudit } from '@/features/book-audit';
 import styles from '../Hero.module.css';
 
 const ORB_CFG = { fx: 0.72, fy: 0.46, rw: 0.24, rh: 0.30 };
 
 export default function Hero() {
   const reduce = usePrefersReducedMotion();
+  const { open } = useBookAudit();
   const magneticRef = useMagnetic<HTMLAnchorElement>();
   const h1Ref = useWordReveal<HTMLHeadingElement>('hero-h', reduce);
 
@@ -35,6 +37,7 @@ export default function Hero() {
             href="#book"
             data-btn
             className={styles.ctaPrimary}
+            onClick={(e) => { e.preventDefault(); open(e.currentTarget); }}
           >
             Book a paid audit
           </a>
