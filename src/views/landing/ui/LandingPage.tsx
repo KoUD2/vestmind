@@ -7,7 +7,7 @@ import TrustStrip from '@/widgets/trust-strip';
 import Problem from '@/widgets/problem';
 import WhyNow from '@/widgets/why-now';
 import HowWeWork from '@/widgets/how-we-work';
-import WhatWeAutomate from '@/widgets/what-we-automate';
+import Services from '@/widgets/services';
 import WhyUs from '@/widgets/why-us';
 import Proof from '@/widgets/proof';
 import WhoFor from '@/widgets/who-for';
@@ -43,7 +43,7 @@ export default function LandingPage() {
         <Problem />
         <WhyNow />
         <HowWeWork />
-        <WhatWeAutomate />
+        <Services />
         <WhyUs />
         <Proof />
         <WhoFor />

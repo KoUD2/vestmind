@@ -44,7 +44,7 @@ function validateField(k: keyof LeadData, data: LeadData): boolean {
 const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
 
 export default function BookAuditModal() {
-  const { isOpen, close, openerRef } = useBookAudit();
+  const { isOpen, close, openerRef, preselectRef } = useBookAudit();
   const reduce = usePrefersReducedMotion();
 
   const [mounted, setMounted] = useState(false);
@@ -63,12 +63,25 @@ export default function BookAuditModal() {
   useEffect(() => {
     if (!isOpen) return;
     const stored = loadStored();
-    setData(stored);
     setSubmitted(false);
     setSending(false);
     setErrors({});
-    setPanel(stored.process ? 'step2' : 'step1');
-  }, [isOpen]);
+    const preselect = preselectRef.current;
+    if (preselect) {
+      const next: LeadData = { ...stored, process: preselect };
+      if (preselect !== 'Other') delete next.otherProcess;
+      setData(next);
+      try {
+        sessionStorage.setItem(STORE, JSON.stringify(next));
+      } catch {
+        /* ignore */
+      }
+      setPanel('step2');
+    } else {
+      setData(stored);
+      setPanel(stored.process ? 'step2' : 'step1');
+    }
+  }, [isOpen, preselectRef]);
 
   const persist = useCallback((next: LeadData) => {
     try {
